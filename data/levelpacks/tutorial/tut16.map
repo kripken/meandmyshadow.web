@@ -1,0 +1,96 @@
+name="The switch"
+size=1000,850
+time=400
+recordings=1
+tile(Block,150,300)
+tile(Block,200,300)
+tile(Block,250,300)
+tile(Block,300,300)
+tile(Block,350,300)
+tile(Block,400,300)
+tile(PlayerStart,250,250)
+tile(ShadowStart,200,250)
+tile(NotificationBlock,300,250){
+	message="There's another type of trigger: the switch.\nGo and see what happens when you press\nthe switch."
+}
+tile(Switch,400,250){
+	behaviour=on
+	id=0
+}
+tile(Block,650,300)
+tile(Block,700,300)
+tile(Block,750,300)
+tile(Exit,750,250)
+tile(Block,800,300)
+tile(MovingBlock,950,800){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=176
+	t1=0
+	x0=-500
+	x1=-500
+	y0=-500
+	y1=-500
+	loop=false
+}
+tile(MovingBlock,950,750){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=12
+	t1=132
+	x0=0
+	x1=-350
+	y0=-50
+	y1=-450
+	loop=false
+}
+tile(MovingBlock,900,750){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=88
+	t1=125
+	x0=-350
+	x1=-350
+	y0=50
+	y1=-450
+	loop=false
+}
+tile(MovingBlock,900,800){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=50
+	t1=134
+	x0=-200
+	x1=-400
+	y0=0
+	y1=-500
+	loop=false
+}
+tile(MovingBlock,850,750){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=37
+	t1=137
+	x0=-150
+	x1=-150
+	y0=0
+	y1=-550
+	loop=false
+}
+tile(MovingBlock,850,800){
+	MovingPosCount=2
+	disabled=1
+	id=0
+	t0=37
+	t1=137
+	x0=-150
+	x1=-150
+	y0=0
+	y1=-550
+	loop=false
+}

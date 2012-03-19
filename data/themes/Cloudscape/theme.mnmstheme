@@ -1,0 +1,381 @@
+name="Cloudscape"
+background(background.png){
+	repeat=0,0
+}
+block(Block){
+	editorPicture(tiles.png,0,0,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,0,50,50)
+			optionalPicture(tiles.png,50,0,50,50,0.15)
+			optionalPicture(tiles.png,100,0,50,50,0.15)
+		}
+	}
+}
+block(ShadowBlock){
+	editorPicture(tiles.png,0,50,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,50,50,50)
+		}
+	}
+}
+character(Player){
+	characterState(standleft){
+		object{
+			picture(player.png,115,0,23,40)
+		}
+	}
+	characterState(standright){
+		object{
+			picture(player.png,0,0,23,40)
+		}
+	}
+	characterState(walkleft){
+		object{
+			animation=20,0
+			pictureAnimation(player.png){
+				point(138,0,23,40,1,5)
+				point(230,0,23,40,4,5)
+			}
+		}
+	}
+	characterState(walkright){
+		object{
+			animation=20,0
+			pictureAnimation(player.png){
+				point(23,0,23,40,1,5)
+				point(115,0,23,40,4,5)
+			}
+		}
+	}
+	characterState(jumpleft){
+		object{
+			picture(player.png,276,0,23,40)
+		}
+	}
+	characterState(fallleft){
+		object{
+			picture(player.png,299,0,23,40)
+		}
+	}
+	characterState(jumpright){
+		object{
+			picture(player.png,230,0,23,40)
+		}
+	}
+	characterState(fallright){
+		object{
+			picture(player.png,253,0,23,40)
+		}
+	}
+	characterState(holding){
+		object{
+			picture(player.png,322,0,23,40)
+		}
+	}
+	characterState(line){
+		object{
+			picture(line.png,0,0,5,5)
+		}
+	}
+	characterState(die){
+		object{
+			picture(player.png,0,0,23,40)
+			invisibleAtRunTime=1
+		}
+	}
+}
+character(Shadow){
+	characterState(standleft){
+		object{
+			picture(shadow.png,115,0,23,40)
+		}
+	}
+	characterState(standright){
+		object{
+			picture(shadow.png,0,0,23,40)
+		}
+	}
+	characterState(walkleft){
+		object{
+			animation=20,0
+			pictureAnimation(shadow.png){
+				point(138,0,23,40,1,5)
+				point(230,0,23,40,4,5)
+			}
+		}
+	}
+	characterState(walkright){
+		object{
+			animation=20,0
+			pictureAnimation(shadow.png){
+				point(23,0,23,40,1,5)
+				point(115,0,23,40,4,5)
+			}
+		}
+	}
+	characterState(jumpleft){
+		object{
+			picture(shadow.png,276,0,23,40)
+		}
+	}
+	characterState(fallleft){
+		object{
+			picture(shadow.png,299,0,23,40)
+		}
+	}
+	characterState(jumpright){
+		object{
+			picture(shadow.png,230,0,23,40)
+		}
+	}
+	characterState(fallright){
+		object{
+			picture(shadow.png,253,0,23,40)
+		}
+	}
+	characterState(holding){
+		object{
+			picture(shadow.png,322,0,23,40)
+		}
+	}
+	characterState(line){
+		object{
+			picture(line.png,0,0,5,5)
+		}
+	}
+	characterState(die){
+		object{
+			picture(shadow.png,0,0,23,40)
+			invisibleAtRunTime=1
+		}
+	}
+}
+block(Fragile){
+	editorPicture(tiles.png,150,0,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,150,0,50,50)
+		}
+	}
+	blockState(fragile1){
+		object{
+			oneTimeAnimation=20,6
+			pictureAnimation(tiles.png){
+				point(200,0,50,50,1,5)
+				point(250,0,50,50,1,5)
+			}
+		}
+	}
+	blockState(fragile2){
+		object{
+			oneTimeAnimation=20,6
+			pictureAnimation(tiles.png){
+				point(300,0,50,50,1,5)
+				point(350,0,50,50,1,5)
+			}
+		}
+	}
+	blockState(fragile3){
+		oneTimeAnimation=6,fragile3_1
+		object{
+			animation=20,0
+			pictureAnimation(tiles.png){
+				point(150,50,50,100,1,2)
+				point(250,50,50,100,2,2)
+			}
+		}
+	}
+	blockState(fragile3_1){
+		object{
+			picture(tiles.png,250,50,50,100)
+			invisibleAtRunTime=1
+		}
+	}
+}
+block(MovingBlock){
+	editorPicture(tiles.png,350,200,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,0,50,50)
+			optionalPicture(tiles.png,50,0,50,50,0.15)
+			optionalPicture(tiles.png,100,0,50,50,0.15)
+			editorPicture(tiles.png,350,200,50,50)
+		}
+	}
+}
+block(MovingShadowBlock){
+	editorPicture(tiles.png,300,200,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,50,50,50)
+			editorPicture(tiles.png,300,200,50,50)
+		}
+	}
+}
+block(Exit){
+	editorPicture(tiles.png,400,0,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,400,0,50,50)
+		}
+	}
+}
+block(Spikes){
+	editorPicture(tiles.png,450,0,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,450,0,50,50)
+			optionalPicture(tiles.png,450,50,50,50,0.5)
+		}
+	}
+}
+block(MovingSpikes){
+	editorPicture(tiles.png,400,200,50,50)
+	blockState(default){
+		object{
+			editorPicture(tiles.png,400,200,50,50)
+			picture(tiles.png,450,0,50,50)
+			optionalPicture(tiles.png,450,50,50,50,0.5)
+		}
+	}
+}
+block(Checkpoint){
+	editorPicture(tiles.png,50,50,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,50,50,50,50)
+		}
+	}
+	blockState(activated){
+		object{
+			animation=16,0
+			picture(tiles.png,100,50,50,50)
+			offsetAnimation{
+				point(0,0)
+				point(0,-4,4,1)
+				point(0,4,8,1)
+				point(0,0,4,1)
+			}
+		}
+	}
+}
+block(Swap){
+	editorPicture(swap.png,0,0,50,50)
+	blockState(default){
+		object{
+			picture(swap.png,0,0,50,50)
+		}
+	}
+	blockState(activated){
+		oneTimeAnimation=24,default
+		object{
+			animation=12,0
+			pictureAnimation(swap.png){
+				point(0,0,50,50)
+				point(600,0,50,50,12,1)
+			}
+		}
+	}
+}
+block(Teleporter){
+	editorPicture(tiles.png,300,50,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,300,50,50,50)
+		}
+	}
+	blockState(activated){
+		oneTimeAnimation=9,default
+		object{
+			animation=3,0
+			pictureAnimation(tiles.png){
+				point(300,50,50,50)
+				point(450,50,50,50,3,1)
+			}
+		}
+	}
+}
+block(Switch){
+	editorPicture(tiles.png,0,100,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,100,50,50)
+		}
+	}
+	blockState(done){
+		object{
+			picture(tiles.png,100,100,50,50)
+		}
+	}
+	blockState(activated){
+		oneTimeAnimation=3,done
+		object{
+			animation=3,0
+			pictureAnimation(tiles.png){
+				point(0,100,50,50)
+				point(150,100,50,50,3,1)
+			}
+		}
+	}
+}
+block(Button){
+	editorPicture(tiles.png,450,200,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,0,0,50,50)
+			optionalPicture(tiles.png,50,0,50,50,0.15)
+			optionalPicture(tiles.png,100,0,50,50,0.15)
+		}
+	}
+	blockState(button){
+		object{
+			# TODO:
+			picture(tiles.png,300,100,50,16)
+		}
+	}
+}
+block(NotificationBlock){
+	editorPicture(tiles.png,350,100,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,350,100,50,50)
+		}
+	}
+}
+block(ConveyorBelt){
+	editorPicture(tiles.png,450,100,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,450,100,50,50)
+			editorPicture(tiles.png,450,100,50,50)
+		}
+	}
+}
+block(ShadowConveyorBelt){
+	editorPicture(tiles.png,400,100,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,400,100,50,50)
+		}
+	}
+}
+block(PlayerStart){
+	editorPicture(tiles.png,250,200,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,250,200,50,50)
+			invisibleAtRunTime=1
+		}
+	}
+}
+block(ShadowStart){
+	editorPicture(tiles.png,200,200,50,50)
+	blockState(default){
+		object{
+			picture(tiles.png,200,200,50,50)
+			invisibleAtRunTime=1
+		}
+	}
+}

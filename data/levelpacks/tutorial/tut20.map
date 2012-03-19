@@ -1,0 +1,49 @@
+name="One-way portal"
+size=1000,600
+time=160
+recordings=0
+tile(Block,150,300)
+tile(Block,200,300)
+tile(Block,250,300)
+tile(Block,300,300)
+tile(Block,350,300)
+tile(Block,400,300)
+tile(Block,450,300)
+tile(Block,600,300)
+tile(Block,550,300)
+tile(Block,500,300)
+tile(ShadowStart,200,250)
+tile(PlayerStart,250,250)
+tile(NotificationBlock,300,250){
+	message="There are always two portals in a level.\nUnless they are broken, but this doesn't mean\nyou can always go back the way you came."
+}
+tile(Teleporter,550,250){
+	automatic=1
+	destination=1
+	id=0
+}
+tile(Block,150,150)
+tile(Block,200,150)
+tile(Block,250,150)
+tile(Block,300,150)
+tile(Block,350,150)
+tile(Block,400,150)
+tile(Block,450,150)
+tile(Block,500,200)
+tile(Block,550,200)
+tile(Block,600,200)
+tile(Block,500,150)
+tile(Block,550,150)
+tile(Block,600,150)
+tile(Block,650,300)
+tile(Block,700,300)
+tile(Block,750,300)
+tile(Block,800,300)
+tile(Exit,750,250)
+tile(Teleporter,200,100){
+	automatic=0
+	id=1
+}
+tile(NotificationBlock,300,100){
+	message="Now try to go through the portal again."
+}

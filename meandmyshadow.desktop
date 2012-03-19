@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.3
+Type=Application
+Name=MeAndMyShadow
+GenericName=Me And My Shadow
+Comment=MeAndMyShadow is a puzzle/platformer game
+TryExec=meandmyshadow
+Exec=meandmyshadow
+Icon=meandmyshadow
+Categories=Game;LogicGame;Game;

@@ -1,0 +1,99 @@
+Me and My Shadow Theme File Description
+=======================================
+
+(draft)
+
+The theme file contains:
+
+name=<theme name>
+
+1 block subnode
+---------------
+
+block(<block name>){...} //subnode specifies the block's appearance
+
+In this subnode:
+
+editorPicture(<file name>,<x>,<y>,<w>,<h>) //specifies the picture shows in editor
+
+1.1 blockState subnode
+----------------------
+
+blockState(<state name>){...} //subnode specifies the appearance of each state of the block
+
+the state name: for example "default" or "activated", detailed information to be announced...
+
+optional attributes:
+
+oneTimeAnimation=<length>,<next state> //if this state is one-time animation only
+
+1.1.1 object subnode
+--------------------
+
+object{...} //subnode specifies (multiple) objects to display in each state
+
+optional attributes:
+
+animation=<length>,<loop point> //if object has looped animation
+oneTimeAnimation=<length>,<end point>
+invisibleAtRunTime=1 //if this object is invisible when playing game
+invisibleAtDesignTime=1 //if this object is invisible when editing the map
+
+optional nodes specifies object to display:
+
+1.1.1.1 picture subnode
+-----------------------
+
+picture(<file name>,<x>,<y>,<w>,<h>)
+
+1.1.1.2 optionalPicture subnode
+-------------------------------
+
+optionalPicture(<file name>,<x>,<y>,<w>,<h>,<probability>)
+
+1.1.1.3 editorPicture subnode
+-----------------------------
+
+editorPicture(<file name>,<x>,<y>,<w>,<h>)
+
+If this subnode is set, the picture will be used in the level editor.
+
+1.1.1.4 offset subnode
+----------------------
+
+offset(<x>,<y>)
+
+1.1.1.5 pictureAnimation subnode
+--------------------------------
+
+pictureAnimation(<file name>){
+	point(<x>,<y>,<w>,<h>)
+	point(<x>,<y>,<w>,<h>,<frame count>,<display time of each frame>)
+	...
+}
+
+1.1.1.6 offsetAnimation subnode
+-------------------------------
+
+offsetAnimation{
+	point(<x>,<y>)
+	point(<x>,<y>,<frame count>,<display time of each frame>)
+	...
+}
+
+2 background subnode
+--------------------
+
+Specifies the background of level.
+There can be multiple background subnodes.
+Each subnode is a layer of background.
+
+Syntax:
+
+background(<file name>){
+	srcSize=<x>,<y>,<w>,<h>  //Specifies the source size and offset of picture (optional, default value=image size)
+	destSize=<x>,<y>,<w>,<h> //Specifies the destination size and offset of picture (optional, default value=source size)
+	repeat=<repeat x>,<repeat y> //Repeat in x,y direction? (0 or 1) (optional, default value=1,1)
+	speed=<speed x>,<speed y> //Specifies the moving speed (pixel/frame, a real number) (optional, default=0,0)
+	cameraSpeed=<x>,<y> //The speed of following camera (a real number, typically in 0-1) (optional, default=0,0)
+}

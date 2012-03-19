@@ -1,0 +1,31 @@
+This file contains the default controls, you can change them in the options menu.
+
+In main menu:
+  Up/Down = Select menu entry
+  Enter = 
+
+In game:
+  R = Restart level
+  F3 = Load last checkpoint (if any)
+  Left = left
+  Right = right
+  Up = jump
+  Down = action
+  Esc = Return to main menu
+
+In level editor:
+  F2 = Save game
+  F4 = Swap player and shadow's position
+  F5 = Place player at mouse location.
+  F12 = Suicide
+  Ctrl+N = Empty level
+  Ctrl+S = Save level
+  Esc = Return to level editor menu
+  Enter = Edit properties of object under mouse cursor
+
+  W = Configure mode
+  A = Add mode
+  D = Delete mode
+  S = Select mode
+  
+  P = test

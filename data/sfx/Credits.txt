@@ -1,0 +1,8 @@
+checkpoint.wav -- ripped from X-Moto, license under GNU GPL.
+
+swap.wav -- download and modified from http://opengameart.org/content/ambient-pulse-noise, license under CC-BY-SA 3.0.
+
+toggle.wav -- http://www.opengameart.org/content/hit-sounds, license under CC0 (Public Domain).
+
+error.wav -- http://opengameart.org/content/skweaks, license under CC0 (Public Domain).
+	      (converted to .wav)
