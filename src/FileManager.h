@@ -22,7 +22,7 @@
 //Included for the extractFile method.
 // #include <archive.h>
 //Included for the downloadFile method.
-#include <curl/curl.h>
+// #include <curl/curl.h>
 
 
 //NOTE: All the methods work with processed pathnames.
@@ -147,7 +147,7 @@ bool extractFile(const std::string &fileName, const std::string &destination);
 //Method used to read a data blcok from an archive and write it to an archive.
 //file: The archive to read from.
 //dest: The archive to write to.
-void copyData(archive* file, archive* dest);
+//void copyData(archive* file, archive* dest);
 
 //Method that will create a directory.
 //path: The directory to create.
