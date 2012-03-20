@@ -14,22 +14,6 @@ INCLUDE_DIRECTORIES(${SDLMIXER_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLTTF_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLGFX_INCLUDE_DIR})
 
-if ( NOT SDL_FOUND )
-    message(FATAL_ERROR "SDL not found !")
-endif ( NOT SDL_FOUND )
-
-if ( NOT SDLTTF_FOUND )
-    message(FATAL_ERROR "SDL_ttf not found !")
-endif ( NOT SDLTTF_FOUND )
-
-if ( NOT SDLMIXER_FOUND )
-    message(FATAL_ERROR "SDL_mixer not found !")
-endif ( NOT SDLMIXER_FOUND )
-
-if ( NOT SDLGFX_FOUND )
-    message(FATAL_ERROR "SDL_gfx not found !")
-endif ( NOT SDLGFX_FOUND )
-
 configure_file (
   "${PROJECT_SOURCE_DIR}/src/config.h.in"
   "${PROJECT_BINARY_DIR}/config.h"
