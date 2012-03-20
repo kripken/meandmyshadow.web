@@ -248,7 +248,7 @@ std::string InputManager::getKeyCodeName(int keyCode){
 	char c[64];
 	if(keyCode>0 && keyCode <0x1000){
 		//keyboard
-		char* s=SDL_GetKeyName((SDLKey)keyCode);
+		const char* s=SDL_GetKeyName((SDLKey)keyCode);
 		if(s!=NULL){
 			return s;
 		}else{
@@ -323,7 +323,8 @@ int InputManager::getKeyState(int keyCode,int oldState,bool hasEvent){
 				state|=0x4;
 			}
 		}
-		if(keyCode<SDLK_LAST && SDL_GetKeyState(NULL)[keyCode]){
+		//if(keyCode<SDLK_LAST && SDL_GetKeyState(NULL)[keyCode]){
+    if (SDL_GetKeyboardState(NULL)[keyCode]){
 			state|=0x1;
 		}
 	}else if(keyCode>0x1000){
