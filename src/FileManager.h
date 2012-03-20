@@ -20,7 +20,7 @@
 #define FILE_MANAGER_H
 
 //Included for the extractFile method.
-#include <archive.h>
+// #include <archive.h>
 //Included for the downloadFile method.
 #include <curl/curl.h>
 
