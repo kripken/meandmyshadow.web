@@ -7,18 +7,12 @@ Find_Package(SDL_ttf REQUIRED)
 Find_Package(SDL_image REQUIRED)
 Find_Package(SDL_mixer REQUIRED)
 Find_Package(SDL_gfx REQUIRED)
-Find_Package(CURL REQUIRED)
-Find_Package(LibArchive REQUIRED)
-Find_Package(OpenSSL REQUIRED)
 
 INCLUDE_DIRECTORIES(${SDL_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLIMAGE_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLMIXER_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLTTF_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SDLGFX_INCLUDE_DIR})
-INCLUDE_DIRECTORIES(${CURL_INCLUDE_DIR})
-INCLUDE_DIRECTORIES(${LibArchive_INCLUDE_DIR})
-INCLUDE_DIRECTORIES(${OPENSSL_INCLUDE_DIR})
 
 if ( NOT SDL_FOUND )
     message(FATAL_ERROR "SDL not found !")
@@ -35,18 +29,6 @@ endif ( NOT SDLMIXER_FOUND )
 if ( NOT SDLGFX_FOUND )
     message(FATAL_ERROR "SDL_gfx not found !")
 endif ( NOT SDLGFX_FOUND )
-
-if ( NOT CURL_FOUND )
-    message(FATAL_ERROR "CURL not found !")
-endif ( NOT CURL_FOUND )
-
-if ( NOT LibArchive_FOUND )
-    message(FATAL_ERROR "LIBARCHIVE not found !")
-endif ( NOT LibArchive_FOUND )
-
-if ( NOT OPENSSL_FOUND )
-    message(FATAL_ERROR "OpenSSL not found !")
-endif ( NOT OPENSSL_FOUND )
 
 configure_file (
   "${PROJECT_SOURCE_DIR}/src/config.h.in"
@@ -79,10 +61,6 @@ target_link_libraries(
 	${SDLIMAGE_LIBRARY}
 	${SDLMIXER_LIBRARY}
 	${SDLGFX_LIBRARY}
-    ${CURL_LIBRARY}
-    ${LibArchive_LIBRARY}
-    ${OPENSSL_LIBRARIES}
-    ${CRYPTO_LIBRARY}
 )
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/data DESTINATION share/meandmyshadow/)
