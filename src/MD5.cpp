@@ -1,3 +1,4 @@
+#ifndef EMSCRIPTEN
 /****************************************************************************
 ** Copyright (C) 2012 me and my shadow developers
 **
@@ -171,3 +172,5 @@ unsigned char *Md5::final(unsigned char *md){
 	return md;
 #endif
 }
+#endif
+
