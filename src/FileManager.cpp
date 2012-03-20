@@ -1,3 +1,4 @@
+#ifndef EMSCRIPTEN
 /****************************************************************************
 ** Copyright (C) 2011 Luka Horvat <redreaper132 at gmail.com>
 ** Copyright (C) 2011 Edward Lii <edward_iii at myway.com>
@@ -717,3 +718,5 @@ bool createFile(const char* file){
 		return false;
 	}
 }
+#endif
+
