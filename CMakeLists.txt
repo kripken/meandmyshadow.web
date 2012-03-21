@@ -20,7 +20,7 @@ include_directories(
 	${PROJECT_BINARY_DIR}
 )
 
-SET(CMAKE_CXX_FLAGS "-Wall -g")
+SET(CMAKE_CXX_FLAGS "-Wall")
 
 # Déclaration de l'exécutable
 file(GLOB Sources ${SRC_DIR}/*.cpp)

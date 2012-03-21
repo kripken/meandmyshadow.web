@@ -1,4 +1,3 @@
-#ifndef EMSCRIPTEN
 /****************************************************************************
 ** Copyright (C) 2011 Luka Horvat <redreaper132 at gmail.com>
 ** Copyright (C) 2011 Edward Lii <edward_iii at myway.com>
@@ -25,8 +24,8 @@
 #include "Globals.h"
 #include "FileManager.h"
 #include "Functions.h"
-#include <archive.h>
-#include <archive_entry.h>
+//#include <archive.h>
+//#include <archive_entry.h>
 using namespace std;
 
 #ifdef WIN32
@@ -446,6 +445,7 @@ bool downloadFile(const string &path, const string &destination) {
 	return status;
 }
 
+#ifndef EMSCRIPTEN
 bool downloadFile(const string &path, FILE* destination) {
 	CURL* curl=curl_easy_init();
 
@@ -466,12 +466,13 @@ bool downloadFile(const string &path, FILE* destination) {
 	
 	return (res==0);
 }
+#endif
 
 size_t writeData(void *ptr, size_t size, size_t nmemb, void *stream){
 	return fwrite(ptr, size, nmemb, (FILE *)stream);
 }
 
-
+#ifndef EMSCRIPTEN
 bool extractFile(const string &fileName, const string &destination) {
 	//Create the archive we're going to extract.
 	archive* file=NULL;
@@ -524,6 +525,7 @@ bool extractFile(const string &fileName, const string &destination) {
 	archive_read_finish(file);
 	return true;
 }
+#endif
 
 bool createDirectory(const char* path){
 #ifdef WIN32
@@ -657,6 +659,7 @@ bool renameDirectory(const char* oldPath,const char* newPath){
 }
 
 
+#ifndef EMSCRIPTEN
 void copyData(archive* file, archive* dest) {
 	int status;
 	const void* buff;
@@ -684,6 +687,7 @@ void copyData(archive* file, archive* dest) {
 		}
 	}
 }
+#endif
 
 bool copyFile(const char* source,const char* dest){
 	//Open the source file.
@@ -718,5 +722,4 @@ bool createFile(const char* file){
 		return false;
 	}
 }
-#endif
 
