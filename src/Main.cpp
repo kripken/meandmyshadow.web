@@ -101,8 +101,14 @@ int main(int argc, char** argv) {
 	tempSurface=SDL_CreateRGBSurface(SDL_HWSURFACE|SDL_SRCALPHA,
 		screen->w,screen->h,screen->format->BitsPerPixel,
 		screen->format->Rmask,screen->format->Gmask,screen->format->Bmask,0);
-	int fadeIn=0;
+	//int fadeIn=0;
 
+  return 0; // The main loop will be called from postRun
+}
+
+extern "C" {
+
+void __attribute__((used)) OneMainLoopIteration() {
 	//Start the game loop.
 	while(stateID!=STATE_EXIT){
 		//We start the timer.
@@ -132,13 +138,13 @@ int main(int argc, char** argv) {
 		currentState->render();
 		//TODO: Shouldn't the gamestate take care of rendering the GUI?
 		if(GUIObjectRoot) GUIObjectRoot->render();
-		if(fadeIn>0&&fadeIn<255){
+		/*if(fadeIn>0&&fadeIn<255){
 			SDL_BlitSurface(screen,NULL,tempSurface,NULL);
 			SDL_FillRect(screen,NULL,0);
 			SDL_SetAlpha(tempSurface, SDL_SRCALPHA, fadeIn);
 			SDL_BlitSurface(tempSurface,NULL,screen,NULL);
 			fadeIn+=17;
-		}
+		}*/
 #ifdef RECORD_PICUTRE_SEQUENCE
 		if(recordPictureSequence){
 			char s[64];
@@ -151,18 +157,20 @@ int main(int argc, char** argv) {
 		SDL_Flip(screen);
 
 		if(nextState!=STATE_NULL){
-			fadeIn=17;
+			//fadeIn=17;
 			changeState();
 		}
 
-		int t=FPS.getTicks();
+		/*int t=FPS.getTicks();
 		t=(1000/g_FPS)-t;
 		if(t>0){
 			SDL_Delay(t);
-		}
+		}*/
 
 	}
+}
 
+int __attribute__((used)) FinalCleanup() { // we don't really do this...
 	//close all joysticks.
 	inputMgr.closeAllJoysticks();
 	
@@ -177,3 +185,6 @@ int main(int argc, char** argv) {
 	//End of program.
 	return 0;
 }
+
+}
+
