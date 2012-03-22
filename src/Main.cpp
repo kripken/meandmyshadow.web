@@ -108,9 +108,13 @@ int main(int argc, char** argv) {
 
 extern "C" {
 
+#include <emscripten.h>
+
 void __attribute__((used)) OneMainLoopIteration() {
-	//Start the game loop.
-	while(stateID!=STATE_EXIT){
+	if (stateID==STATE_EXIT) emscripten_run_script("throw 'game finished'");
+
+	////Start the game loop.
+	//while(stateID!=STATE_EXIT){
 		//We start the timer.
 		FPS.start();
 
@@ -167,7 +171,7 @@ void __attribute__((used)) OneMainLoopIteration() {
 			SDL_Delay(t);
 		}*/
 
-	}
+	//}
 }
 
 int __attribute__((used)) FinalCleanup() { // we don't really do this...

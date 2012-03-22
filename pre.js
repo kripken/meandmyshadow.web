@@ -1,7 +1,8 @@
 
 Module['noExitRuntime'] = true;
 Module['postRun'] = function() {
-  var id;
+  _OneMainLoopIteration();
+  /*var id;
   function doOne() {
     try {
       _OneMainLoopIteration();
@@ -11,6 +12,6 @@ Module['postRun'] = function() {
       throw e;
     }
   }
-  var id = setInterval(doOne, 1000);
+  var id = setInterval(doOne, 1000);*/
 };
 
