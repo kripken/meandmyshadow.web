@@ -1,17 +1,11 @@
 
 Module['noExitRuntime'] = true;
 Module['postRun'] = function() {
-  _OneMainLoopIteration();
-  /*var id;
   function doOne() {
-    try {
-      _OneMainLoopIteration();
-    } catch(e) {
-      console.log('exception in main loop, stopping looping');
-      clearInterval(id);
-      throw e;
-    }
+    //console.log('zz doOne ' + Date.now());
+    _OneMainLoopIteration();
+    setTimeout(doOne, 1000/30);
   }
-  var id = setInterval(doOne, 1000);*/
+  setTimeout(doOne, 1000/30);
 };
 
