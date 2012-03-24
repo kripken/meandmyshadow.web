@@ -400,7 +400,7 @@ void Options::handleEvents(){
 	}
 
 	//Check if the escape button is pressed, if so go back to the main menu.
-	if(inputMgr.isKeyDownEvent(INPUTMGR_ESCAPE)){
+	if(inputMgr.isKeyUpEvent(INPUTMGR_ESCAPE)){
 		setNextState(STATE_MENU);
 	}
 }
