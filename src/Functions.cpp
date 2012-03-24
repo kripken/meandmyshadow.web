@@ -312,7 +312,7 @@ void changeState(){
 		//NOTE: STATE_EXIT isn't mentioned, meaning that currentState is null.
 		//This way the game loop will break and the program will exit.
 		
-		//Fade out.
+		/*//Fade out.
 		int fade=255;
 		SDL_BlitSurface(screen,NULL,tempSurface,NULL);
 		while(fade>0){
@@ -325,7 +325,7 @@ void changeState(){
 			SDL_BlitSurface(tempSurface,NULL,screen,NULL);
 			SDL_Flip(screen);
 			SDL_Delay(25);
-		}
+		}*/
 	}
 }
 
