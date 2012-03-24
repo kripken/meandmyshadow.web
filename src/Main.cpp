@@ -111,7 +111,7 @@ extern "C" {
 #include <emscripten.h>
 
 void __attribute__((used)) OneMainLoopIteration() {
-	if (stateID==STATE_EXIT) emscripten_run_script("throw 'game finished'");
+	if (stateID==STATE_EXIT) emscripten_run_script("Module.print('game finished'); throw 'game finished'");
 
 	////Start the game loop.
 	//while(stateID!=STATE_EXIT){
