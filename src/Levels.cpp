@@ -413,7 +413,11 @@ void Levels::getLevelAutoSaveRecordPath(int level,std::string &bestTimeFilePath,
 
 	//calculate MD5
 	s+='-';
+#if EMSCRIPTEN
+  s+="nomd5";
+#else
 	s+=Md5::toString(levels[level].md5Digest);
+#endif
 
 	//over
 	bestTimeFilePath=s+"-best-time.mnmsrec";
