@@ -2,11 +2,11 @@ PROJECT(meandmyshadow)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-Find_Package(SDL REQUIRED)
-Find_Package(SDL_ttf REQUIRED)
-Find_Package(SDL_image REQUIRED)
-Find_Package(SDL_mixer REQUIRED)
-Find_Package(SDL_gfx REQUIRED)
+#Find_Package(SDL REQUIRED)
+#Find_Package(SDL_ttf REQUIRED)
+#Find_Package(SDL_image REQUIRED)
+#Find_Package(SDL_mixer REQUIRED)
+#Find_Package(SDL_gfx REQUIRED)
 
 configure_file (
   "${PROJECT_SOURCE_DIR}/src/config.h.in"
