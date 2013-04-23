@@ -133,6 +133,7 @@ static void md5AppendMap(Md5& md5,const map<string,vector<string> >& m){
 unsigned char* TreeStorageNode::calcMD5(unsigned char* md){
 #if EMSCRIPTEN
   memset(md, 0, 16);
+  return md;
 #else
 	unsigned char digest[16];
 	Md5 md5;
