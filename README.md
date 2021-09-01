@@ -7,6 +7,8 @@ This is a port of
 
 using Emscripten.
 
+**Live demo**: [https://kripken.github.io/meandmyshadow.web/mams.html](https://kripken.github.io/meandmyshadow.web/mams.html)
+
 ## Building
 
 * [Get and install the emsdk](https://emscripten.org/docs/getting_started/downloads.html)
