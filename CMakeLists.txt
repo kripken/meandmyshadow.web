@@ -39,3 +39,8 @@ if("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
 	install(FILES icons/48x48/meandmyshadow.png DESTINATION share/icons/hicolor/48x48/apps/)
 	install(FILES icons/64x64/meandmyshadow.png DESTINATION share/icons/hicolor/64x64/apps/)
 endif("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
+
+target_link_libraries(meandmyshadow "-O3 --preload-file data --pre-js pre.js -s TOTAL_MEMORY=33554432 -sEXPORTED_FUNCTIONS=[_main,_SDL_Quit,_OneMainLoopIteration] --use-preload-plugins")
+
+set(CMAKE_EXECUTABLE_SUFFIX ".html")
+

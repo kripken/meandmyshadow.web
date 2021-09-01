@@ -46,7 +46,7 @@ SDL_Surface* ImageManager::loadImage(std::string file){
 			//We use cyan for alpha, so set the alpha color key.
 			SDL_SetColorKey(load,SDL_SRCCOLORKEY,SDL_MapRGB(load->format,0,0xFF,0xFF));
 			//Let opt use the alpha.
-			opt=SDL_DisplayFormat(load);
+			opt=SDL_DisplayFormatAlpha(load);
 			//We don't need load anymore so free it.
 			SDL_FreeSurface(load);
 		}

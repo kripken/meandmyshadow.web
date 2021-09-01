@@ -435,6 +435,9 @@ std::string pathFromFileName(const std::string &filename){
 }
 
 bool downloadFile(const string &path, const string &destination) {
+#ifdef __EMSCRIPTEN__
+  return false;
+#else
 	string filename=fileNameFromPath(path,true);
 	
 	FILE* file = fopen((destination+filename).c_str(), "wb");
@@ -443,10 +446,13 @@ bool downloadFile(const string &path, const string &destination) {
 	
 	//And return the status.
 	return status;
+#endif
 }
 
-#ifndef EMSCRIPTEN
 bool downloadFile(const string &path, FILE* destination) {
+#ifdef __EMSCRIPTEN__
+  return false;
+#else
 	CURL* curl=curl_easy_init();
 
 	// proxy test (test only)
@@ -465,15 +471,17 @@ bool downloadFile(const string &path, FILE* destination) {
 	curl_easy_cleanup(curl);
 	
 	return (res==0);
-}
 #endif
+}
 
 size_t writeData(void *ptr, size_t size, size_t nmemb, void *stream){
 	return fwrite(ptr, size, nmemb, (FILE *)stream);
 }
 
-#ifndef EMSCRIPTEN
 bool extractFile(const string &fileName, const string &destination) {
+#ifdef __EMSCRIPTEN__
+  return false;
+#else
 	//Create the archive we're going to extract.
 	archive* file=NULL;
 	//Create the destination we're going to extract to.
@@ -524,8 +532,8 @@ bool extractFile(const string &fileName, const string &destination) {
 	archive_read_close(file);
 	archive_read_finish(file);
 	return true;
-}
 #endif
+}
 
 bool createDirectory(const char* path){
 #ifdef WIN32
