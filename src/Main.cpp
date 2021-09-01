@@ -106,9 +106,9 @@ int main(int argc, char** argv) {
   return 0; // The main loop will be called from postRun
 }
 
-extern "C" {
-
 #include <emscripten.h>
+
+extern "C" {
 
 void __attribute__((used)) OneMainLoopIteration() {
 	if (stateID==STATE_EXIT) emscripten_run_script("Module.print('game finished'); _SDL_Quit(); throw 'game finished'");
